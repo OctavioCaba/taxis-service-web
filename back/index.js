@@ -5,9 +5,8 @@ const port = process.env.PORT;
 
 app.use(express.json());
 app.use(express.static('../front/build'));
-
-app.get('/server/', (req, res) => {
-  res.send('<h1>Taxis service server</h1>');
+app.get('*', (req, res) => {
+  res.sendFile('index.html', {root: '../front/build/'});
 });
 
 app.listen(port, () => {
