@@ -1,0 +1,32 @@
+{
+  "name": "taxis-service-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "back",
+    "front"
+  ],
+  "engines": {
+    "npm": "7.9.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env SKIP_PREFLIGHT_CHECK=true npm run build --workspace=front",
+    "start": "cross-env npm run start --workspace=back",
+    "dev:pack": "cross-env npm run build && npm run dev --workspace=back"
+  },
+  "eslintConfig": {
+    "ignorePatterns": "build",
+    "extends": "react-app",
+    "env": {
+      "jest": true
+    }
+  },
+  "dependencies": {
+    "cross-env": "7.0.3"
+  },
+  "keywords": [],
+  "author": "Octavio Caba",
+  "license": "ISC"
+}
