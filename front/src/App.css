@@ -1,3 +1,24 @@
+:root {
+  --app-background-color: #ffffff;
+  --item-list-font: #000000;
+  --font-color-1: #000000;
+  --font-color-2: #222222;
+  --font-white: #ffffff;
+  --header-background: #282c34;
+  --header-link-hover: #bebebe;
+  --red-1: #80183c;
+  --red-2: #80183ce6;
+  --dark-red-background: rgb(128, 24, 60);
+  --dark-red-background-hover: rgba(128, 24, 60, 0.9);
+  --login-field-border: rgba(175, 40, 90, 0.5);
+  --green-2: #059862;
+  --green-3: #068355;
+  --background-color: #e7e7e7;
+  --form-input-color: #999999;
+  --footer-background-color: #e1e1e1;
+  --theme-button-background-color: #505050;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,16 +35,17 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  background-color: var(--app-background-color);
 }
 
 .header {
-  background-color: #282c34;
+  background-color: var(--header-background);
   min-height: 8vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0 20px;
-  color: #fff;
+  color: var(--font-white);
 }
 
 .logged-in-header {
@@ -37,17 +59,33 @@ body {
 }
 
 .header .link {
-  color: #fff;
+  color: var(--font-white);
   text-decoration: none;
 }
 
 .header .link:hover {
-  color: #bebebe;
+  color: var(--header-link-hover);
   text-decoration: underline;
+}
+
+.theme-button {
+  position: absolute;
+  left: calc(50% - 41px);
+  padding: 5px 20px;
+  text-transform: uppercase;
+  border: 1px solid var(--footer-background-color);
+  cursor: pointer;
+  background-color: var(--header-background);
+  color: var(--font-white);
+}
+
+.theme-button:hover {
+  background-color: var(--theme-button-background-color);
 }
 
 h2 {
   margin-top: 20px;
+  color: var(--item-list-font);
 }
 
 .content-wrapper {
@@ -91,12 +129,13 @@ h2 {
 }
 
 .taxi-item-list {
+  color: var(--item-list-font);
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 10px;
-  border-right: 1px solid #222;
-  border-left: 1px solid #222;
+  border-right: 1px solid var(--font-color-2);
+  border-left: 1px solid var(--font-color-2);
 }
 
 .taxi-item-list p:first-of-type {
@@ -108,14 +147,14 @@ h2 {
 }
 
 .taxi-item-list:first-of-type {
-  border-top: 1px solid #222;
+  border-top: 1px solid var(--font-color-2);
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   font-size: 19px;
 }
 
 .taxi-item-list:first-of-type:hover {
-  background-color: #fff;
+  background-color: var(--app-background-color);
   cursor: inherit;
 }
 
@@ -128,31 +167,31 @@ h2 {
 }
 
 .taxi-item-list:last-of-type {
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid var(--font-color-2);
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
 
 .taxi-item-list:hover {
-  background-color: #e7e7e7;
+  background-color: var(--background-color);
 }
 
 .reserved {
-  background-color: #059862;
-  color: #fff;
+  background-color: var(--green-2);
+  color: var(--font-white);
 }
 
 .reserved:hover {
-  background-color: #068355;
+  background-color: var(--green-3);
 }
 
 .run-out {
-  background-color: #80183c;
-  color: #fff;
+  background-color: var(--red-1);
+  color: var(--font-white);
 }
 
 .run-out:hover {
-  background-color: #80183ce6;
+  background-color: var(--red-2);
 }
 
 /* REGISTER */
@@ -179,7 +218,7 @@ h2 {
 
 .login-form .form-field {
   padding: 10px 20px;
-  border-bottom: 1px solid rgba(175, 40, 90, 0.5);
+  border-bottom: 1px solid var(--login-field-border);
   min-width: 90%;
   margin: 10px 0;
   display: flex;
@@ -188,14 +227,14 @@ h2 {
 
 .login-form .form-field input {
   padding: 10px;
-  color: #999;
-  background: #e7e7e7;
+  color: var(--form-input-color);
+  background: var(--background-color);
   border: none;
   font-size: 16px;
 }
 
 .login-form .form-field input:focus {
-  color: #000;
+  color: var(--font-color-1);
 }
 
 .login-form .login-button {
@@ -204,14 +243,14 @@ h2 {
   text-transform: uppercase;
   margin-top: 20px;
   width: 90%;
-  color: #fff;
-  background-color: rgb(128, 24, 60);
+  color: var(--font-white);
+  background-color: var(--dark-red-background);
   border: none;
 }
 
 .login-form .login-button:hover {
   cursor: pointer;
-  background-color: rgba(128, 24, 60, 0.9);
+  background-color: var(--dark-red-background-hover);
 }
 
 @media (min-width: 768px) {
@@ -247,7 +286,7 @@ h2 {
   border-radius: 5px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  background-color: #fff;
+  background-color: var(--app-background-color);
   border-left-width: 8px;
   animation: slide-up 5s;
 }
@@ -271,13 +310,13 @@ h2 {
 }
 
 .success {
-  border-color: #059862;
-  color: #068355;
+  border-color: var(--green-2);
+  color: var(--green-3);
 }
 
 .error {
-  border-color: #80183ce6;
-  color: #80183c;
+  border-color: var(--red-2);
+  color: var(--red-1);
 }
 
 /* GUEST RESERVATION PAGE && NOT FOUND */
@@ -292,27 +331,28 @@ h2 {
 .not-found p,
 .guest-reservation p {
   margin: 40px 0;
+  color: var(--item-list-font);
 }
 
 .not-found .link,
 .guest-reservation .link {
   text-decoration: none;
   font-weight: bold;
-  color: #000;
+  color: var(--font-color-1);
 }
 
 .not-found .link:hover,
 .guest-reservation .link:hover {
   text-decoration: underline;
   font-weight: normal;
-  color: #282c34;
+  color: var(--header-background);
 }
 
 /* FOOTER */
 .footer {
   height: 8vh;
-  background-color: #e1e1e1;
-  color: #222;
+  background-color: var(--footer-background-color);
+  color: var(--font-color-2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,9 +362,30 @@ h2 {
 
 .footer .link {
   text-decoration: none;
-  color: #222;
+  color: var(--font-color-2);
 }
 
 .footer .link:hover {
   text-decoration: underline;
+}
+
+[data-theme="dark"] {
+  --app-background-color: #282c34;
+  --item-list-font: #ffffff;
+  --font-color-1: #ffffff;
+  --font-color-2: #dddddd;
+  --font-white: #ffffff;
+  --header-background: #34353a;
+  --header-link-hover: #bebebe;
+  --red-1: #b42154;
+  --red-2: #b42154e6;
+  --dark-red-background: rgb(128, 24, 60);
+  --dark-red-background-hover: rgba(128, 24, 60, 0.9);
+  --login-field-border: rgba(175, 40, 90, 0.5);
+  --green-2: #059862;
+  --green-3: #068355;
+  --background-color: #616161;
+  --form-input-color: #bbbbbb;
+  --footer-background-color: #505050;
+  --theme-button-background-color: #505050;
 }
